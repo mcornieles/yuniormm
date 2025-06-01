@@ -17,7 +17,6 @@ body {
 @media (max-width: 600px) {
   body {
         background-image: url('../images/portraitbackground.png') !important;
-        background-color: red !important;
     }
 }
 
