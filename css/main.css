@@ -203,7 +203,7 @@ main {
 
 .social-links {
     flex-wrap: nowrap;      /* fuerza que sea una sola línea */
-    gap: 0.45rem;           /* menos espacio entre iconos */
+    gap: 1.rem;           /* menos espacio entre iconos */
     justify-content: center;
     width: 100%;
     padding-left: 0;
@@ -216,6 +216,7 @@ main {
     height: 36px;
     margin-bottom: 0.4rem;
   }
+
 
 
 }
