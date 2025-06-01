@@ -15,8 +15,9 @@ body {
 
 /* Cambiar fondo en dispositivos móviles (portrait) */
 @media (max-width: 600px) {
-    body {
+  body {
         background-image: url('../images/portraitbackground.png') !important;
+        background-color: red !important;
     }
 }
 
