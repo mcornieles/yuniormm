@@ -145,6 +145,8 @@ main {
     transform: translateY(-3px) scale(1.05);
 }
 
+
+
 /* --- Responsivo para móvil --- */
 @media (max-width: 600px) {
     header {
@@ -198,4 +200,22 @@ main {
         font-size: 1rem;
         padding: 0.8rem 0;
     }
+
+.social-links {
+    flex-wrap: nowrap;      /* fuerza que sea una sola línea */
+    gap: 0.45rem;           /* menos espacio entre iconos */
+    justify-content: center;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .social-links a img {
+    width: 34px;            /* más pequeños aún */
+    height: 34px;
+    margin-bottom: 0.4rem;
+  }
+
+
 }
