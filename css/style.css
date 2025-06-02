@@ -73,15 +73,19 @@ header h1 {
     background-color: transparent;
     border-radius: 10px;
     box-shadow: none;
+    width: 100%; /* Ensure it can take full width */
+    max-width: 600px; /* Optional: Limit max width on very large screens for alignment */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
 }
 
 .profile-pic {
-    width: 600px; /* Set your desired width */
-    height: 375px; /* Set your desired height */
+    width: 80%; /* Image width will be 80% of its parent (.profile-section) */
+    height: auto; /* Height will scale automatically to maintain aspect ratio */
     object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    box-shadow: 0 25px 15px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+    border-radius: 15px;
 }
 
 .social-icons a img {
@@ -95,31 +99,27 @@ header h1 {
     transform: translateY(-5px); /* Efecto al pasar el mouse */
 }
 
-/* Sección de Botones */
-.buttons-section {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
-    justify-content: center;
-    gap: 20px; /* Espacio entre los botones */
+/* Contact Text Section */
+.contact-text-section {
+    margin-top: 30px; /* Space above this section */
+    width: 80%; /* Ancho de la sección */
+    max-width: 600px; /* Max width, perhaps matching your image width */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 15px 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Relief effect */
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* Text color */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
 }
 
-.action-button {
-    background-color: #231709;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.contact-text-section p {
+    font-size: 1.2em; /* Larger font size for readability */
+    line-height: 1.6;
+    margin: 0; /* Remove default paragraph margins */
 }
-
-.action-button:hover {
-    background-color: #0056b3;
-}
-
 
 /* Media Queries for Responsive Design */
 
@@ -140,9 +140,19 @@ header h1 {
     }
 
     .profile-pic {
-        width: 250px; /* Even smaller for mobile */
-        height: 150px;
+        width: 80%; /* Maintain 80% width for mobile image */
+        height: auto;
     }
+    /*
+    If you want the image to shrink to a specific max-width on mobile (e.g., 250px),
+    you can add a max-width here, while still keeping width: 80%; for smaller screens.
+    Example:
+    .profile-pic {
+        max-width: 250px;
+        width: 80%;
+        height: auto;
+    }
+    */
 
     .social-icons a img {
         width: 30px;
@@ -150,9 +160,12 @@ header h1 {
         margin: 0 5px;
     }
 
-    .action-button {
+    .contact-text-section {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 15px 20px;
+    }
+    .contact-text-section p {
         font-size: 1em;
-        padding: 10px 20px;
     }
 }
 
@@ -165,9 +178,19 @@ header h1 {
     }
 
     .profile-pic {
-        width: 350px;
-        height: 225px;
+        width: 80%; /* Maintain 80% width for tablet image */
+        height: auto;
     }
+    /*
+    If you want the image to shrink to a specific max-width on tablet (e.g., 350px),
+    you can add a max-width here, while still keeping width: 80%; for smaller screens.
+    Example:
+    .profile-pic {
+        max-width: 350px;
+        width: 80%;
+        height: auto;
+    }
+    */
 
     .social-icons a img {
         width: 35px;
@@ -175,19 +198,14 @@ header h1 {
         margin: 0 8px;
     }
 
-    .action-button {
-        width: 90%;
-        margin-bottom: 15px;
-    }
-
-    .buttons-section {
-        flex-direction: column;
-        align-items: center;
+    .contact-text-section {
+        width: 90%; /* Adjust width for tablets */
+        padding: 10px 15px;
     }
 }
 
 
-/* --- For PC/Large Screens (> 768px) --- */
+/* --- For PC/Large Screens (> 769px) --- */
 @media (min-width: 769px) {
     header h1 {
         width: 600px; /* Matches desktop profile-pic width */
@@ -195,7 +213,17 @@ header h1 {
     }
 
     .profile-pic {
-        width: 600px; /* Desktop size */
-        height: 375px;
+        width: 80%; /* Maintain 80% width for desktop image */
+        height: auto;
     }
+    /*
+    If you want the image to limit to a specific max-width on desktop (e.g., 600px),
+    you can add a max-width here, while still keeping width: 80%; for smaller screens.
+    Example:
+    .profile-pic {
+        max-width: 600px;
+        width: 80%;
+        height: auto;
+    }
+    */
 }
