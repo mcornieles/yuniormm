@@ -32,16 +32,16 @@ header {
     flex-direction: column; /* ALWAYS stack items vertically */
     align-items: center; /* ALWAYS center items horizontally within the header */
     padding: 10px 0;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 header h1 {
     color: white;
     font-size: 2.5em; /* Default font size */
     text-align: center; /* Center the text inside the h1 */
-    margin-top: 10px; /* Space between language buttons and H1 */
-    margin-bottom: 10px; /* Space below H1 */
-    width: 600px; /* Base width for desktop */
+    margin-top: 0px; /* Space between language buttons and H1 */
+    margin-bottom: 0px; /* Space below H1 */
+    width: 800px; /* Base width for desktop */
     max-width: 90%; /* Ensures it shrinks on smaller screens */
 }
 
@@ -75,7 +75,7 @@ header h1 {
     border-radius: 10px;
     box-shadow: none;
     width: 100%; /* Ensure it can take full width */
-    max-width: 600px; /* Optional: Limit max width on very large screens for alignment */
+    max-width: 800px; /* Optional: Limit max width on very large screens for alignment */
     margin-left: auto; /* Centra horizontalmente */
     margin-right: auto; /* Centra horizontalmente */
 }
@@ -104,7 +104,7 @@ header h1 {
 .contact-text-section {
     margin-top: 30px; /* Space above this section */
     width: 80%; /* Ancho de la sección */
-    max-width: 600px; /* Max width, perhaps matching your image width */
+    max-width: 80%; /* Max width, perhaps matching your image width */
     background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
     padding: 15px 20px; /* Padding inside the box */
     border-radius: 10px; /* Rounded corners */
@@ -131,7 +131,7 @@ header h1 {
     }
     
     header h1 {
-        width: 250px; /* Matches mobile profile-pic width */
+        width: 80%; /* Matches mobile profile-pic width */
         font-size: 1.6em;
     }
 
@@ -163,7 +163,7 @@ header h1 {
     }
 
     .contact-text-section {
-        width: 95%; /* Adjust width for smaller screens */
+        width: 80%; /* Adjust width for smaller screens */
         padding: 15px 20px;
     }
     .contact-text-section p {
@@ -175,7 +175,7 @@ header h1 {
 /* --- For tablets and devices MEDIUM (481px to 768px) --- */
 @media (min-width: 481px) and (max-width: 768px) {
     header h1 {
-        width: 350px; /* Matches tablet profile-pic width */
+        width: 80%; /* Matches tablet profile-pic width */
         font-size: 2em;
     }
 
@@ -201,7 +201,7 @@ header h1 {
     }
 
     .contact-text-section {
-        width: 90%; /* Adjust width for tablets */
+        width: 80%; /* Adjust width for tablets */
         padding: 10px 15px;
     }
 }
@@ -210,7 +210,7 @@ header h1 {
 /* --- For PC/Large Screens (> 769px) --- */
 @media (min-width: 769px) {
     header h1 {
-        width: 600px; /* Matches desktop profile-pic width */
+        width: 80%; /* Matches desktop profile-pic width */
         font-size: 2.5em;
     }
 
