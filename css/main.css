@@ -1,222 +1,201 @@
-/* --- Fondo para PC y Móvil --- */
-body {
+/* Estilos Generales y Reseteo */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background-image: url('../images/background.png');
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+}
+
+/* Contenedor del fondo */
+.background-container {
+    background-image: url('../images/background.png'); /* Fondo por defecto para PC */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+    background-attachment: fixed; /* Opcional: para un efecto de paralaje */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 20px; /* Espaciado general */
 }
 
-/* Cambiar fondo en dispositivos móviles (portrait) */
-@media (max-width: 600px) {
-  body {
-        background-image: url('../images/portraitbackground.png') !important;
-    }
-}
-
-/* --- Header y botón de idioma --- */
+/* Header (main container for H1 and Language Switcher) */
 header {
-  width: 100%;
-  padding: 2.2rem 0 1.2rem 0; /* más espacio arriba */
-  background: rgba(145, 105, 20, 0.98);
-  position: relative;
-  min-height: 15px; /* asegura altura suficiente */
-}
-
-/* TÍTULO CENTRADO ABSOLUTO */
-header h1 {
-  color: #fff;
-  font-size: 2.8rem;
-  margin: 0;
-  letter-spacing: 1px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: max-content;
-  z-index: 1;
-}
-
-.flex-spacer {
-    flex: 1;
-}
-
-/* BOTÓN A LA DERECHA ABSOLUTO */
-#langBtn {
-  position: absolute;
-  right: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #fff;
-  border: none;
-  border-radius: 22px;
-  padding: 0.45rem 1.3rem;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
-  z-index: 2;
-}
-#langBtn:hover {
-  background: #eee;
-}
-
-/* --- Main Content --- */
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 2vh;
-}
-
-/* --- Artist Image --- */
-.artist-container {
-    margin-top: 2.2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.artist-img {
-    width: 420px;
-    max-width: 98vw;
-    border-radius: 20px;
-    box-shadow: 0 6px 40px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
-}
-
-.artist-img:hover {
-    transform: scale(1.04);
-}
-
-/* --- Social Links --- */
-.social-links {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.social-links a img {
-    width: 48px;
-    height: 48px;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-    transition: transform 0.2s;
-}
-
-.social-links a img:hover {
-    transform: scale(1.15);
-}
-
-/* --- Hire Section --- */
-.hire-section {
-    margin-top: 1.1rem;
-    display: flex;
-    gap: 1.3rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hire-btn {
-    background: #222;
-    color: #fff;
-    padding: 0.9rem 1.7rem;
-    border: none;
-    border-radius: 22px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin: 0.3rem 0;
-    font-weight: 600;
-    transition: background 0.2s, transform 0.2s;
-}
-.hire-btn:hover {
-    background: #444;
-    transform: translateY(-3px) scale(1.05);
-}
-
-
-
-/* --- Responsivo para móvil --- */
-@media (max-width: 600px) {
-    header {
-    padding: 1.2rem 0 0.8rem 0;
-    min-height: unset;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: static;  /* IMPORTANTE: quita absoluto para hijos */
-  }
-    header h1 {
-    position: static;
-    left: auto;
-    top: auto;
-    transform: none;
     width: 100%;
-    font-size: 2.1rem;
-    margin-bottom: 0.6rem;
-    margin-top: 0;
+    display: flex;
+    flex-direction: column; /* ALWAYS stack items vertically */
+    align-items: center; /* ALWAYS center items horizontally within the header */
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5em; /* Default font size */
+    text-align: center; /* Center the text inside the h1 */
+    margin-top: 10px; /* Space between language buttons and H1 */
+    margin-bottom: 10px; /* Space below H1 */
+    width: 600px; /* Base width for desktop */
+    max-width: 90%; /* Ensures it shrinks on smaller screens */
+}
+
+.language-switcher {
+    display: flex; /* Keep buttons side by side */
+    justify-content: center; /* ALWAYS center language buttons */
+    width: 100%; /* Take full width of header */
+    margin-bottom: 0; /* No explicit bottom margin here, handled by h1's margin-top */
+}
+
+.language-switcher button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.language-switcher button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Sección de Perfil (Foto y Redes Sociales) */
+.profile-section {
     text-align: center;
-    z-index: 1;
-  }
-    #langBtn {
-    position: static;
-    margin: 0 auto 0.4rem auto;
-    width: auto;
-    display: block;
-    font-size: 1.13rem;
-    right: auto;
-    top: auto;
-    transform: none;
-    z-index: 2;
-  }
-    .artist-img {
-        width: 98vw;
-        max-width: 99vw;
+    margin-top: 20px; /* Adjusted margin to prevent clash with header margin-bottom */
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.profile-pic {
+    width: 600px; /* Set your desired width */
+    height: 375px; /* Set your desired height */
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.social-icons a img {
+    width: 40px; /* Tamaño de los iconos */
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: translateY(-5px); /* Efecto al pasar el mouse */
+}
+
+/* Sección de Botones */
+.buttons-section {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+.action-button {
+    background-color: #231709;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Media Queries for Responsive Design */
+
+/* --- For devices SMALL (< 480px) --- */
+@media (max-width: 480px) {
+    .background-container {
+        background-image: url('../images/portraitbackground.png'); /* Fondo específico para móviles */
     }
-    .bio-box {
-        padding: 1rem 0.7rem;
-        font-size: 0.98rem;
-        max-width: 96vw;
+    
+    header h1 {
+        width: 250px; /* Matches mobile profile-pic width */
+        font-size: 1.6em;
     }
-    .hire-section {
+
+    .language-switcher button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    .profile-pic {
+        width: 250px; /* Even smaller for mobile */
+        height: 150px;
+    }
+
+    .social-icons a img {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+    }
+
+    .action-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+
+
+/* --- For tablets and devices MEDIUM (481px to 768px) --- */
+@media (min-width: 481px) and (max-width: 768px) {
+    header h1 {
+        width: 350px; /* Matches tablet profile-pic width */
+        font-size: 2em;
+    }
+
+    .profile-pic {
+        width: 350px;
+        height: 225px;
+    }
+
+    .social-icons a img {
+        width: 35px;
+        height: 35px;
+        margin: 0 8px;
+    }
+
+    .action-button {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .buttons-section {
         flex-direction: column;
-        gap: 0.6rem;
-        width: 100%;
         align-items: center;
     }
-    .hire-btn {
-        width: 90vw;
-        font-size: 1rem;
-        padding: 0.8rem 0;
+}
+
+
+/* --- For PC/Large Screens (> 768px) --- */
+@media (min-width: 769px) {
+    header h1 {
+        width: 600px; /* Matches desktop profile-pic width */
+        font-size: 2.5em;
     }
 
-.social-links {
-    flex-wrap: nowrap;      /* fuerza que sea una sola línea */
-    gap: 1.rem;           /* menos espacio entre iconos */
-    justify-content: center;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 1.2rem;
-    margin-bottom: 0.7rem;
-  }
-  .social-links a img {
-    width: 36px;            /* más pequeños aún */
-    height: 36px;
-    margin-bottom: 0.4rem;
-  }
-
-
-
+    .profile-pic {
+        width: 600px; /* Desktop size */
+        height: 375px;
+    }
 }
