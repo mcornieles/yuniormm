@@ -4,37 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Elementos de la página que cambiarán de idioma
     const artistName = document.getElementById('artist-name');
-    // Removed: const bioTitle = document.getElementById('bio-title');
-    // Removed: const bioContent = document.getElementById('bio-content');
-    const hireMusicianBtn = document.getElementById('hire-musician');
-    const hireTeacherBtn = document.getElementById('hire-teacher');
+    const contactMessage = document.getElementById('contact-message'); // NEW: Get the contact message element
 
     // Contenido en diferentes idiomas
     const content = {
         es: {
-            artistName: 'YUNIOR MARTINEZ', // Spanish version of the name
-            // Removed: bioTitle: 'Biografía',
-            // Removed: bioContent: `Aquí irá la biografía de Yunior Martinez...`,
-            hireMusician: 'Contratar como Músico',
-            hireTeacher: 'Contratar como Profesor'
+            artistName: 'YUNIOR MARTINEZ',
+            contactMessage: 'Para contratarme como musico o maestro enviame un email o un mensaje por whatsapp, Gracias.' // NEW: Spanish message
         },
         en: {
-            artistName: 'YUNIOR MARTINEZ', // English version of the name (can be different if desired)
-            // Removed: bioTitle: 'Biography',
-            // Removed: bioContent: `Here will be Yunior Martinez's biography...`,
-            hireMusician: 'Hire as Musician',
-            hireTeacher: 'Hire as Teacher'
+            artistName: 'YUNIOR MARTINEZ',
+            contactMessage: 'To hire me as a musician or teacher, send me an email or a message via WhatsApp, Thanks.' // NEW: English message
         }
     };
 
     // Función para actualizar el contenido de la página
     function updateContent(language) {
-        artistName.textContent = content[language].artistName; // Update H1 text
-        // Removed: bioTitle.textContent = content[language].bioTitle;
-        // Removed: bioContent.textContent = content[language].bioContent;
-        hireMusicianBtn.textContent = content[language].hireMusician;
-        hireTeacherBtn.textContent = content[language].hireTeacher;
-        document.documentElement.lang = language; // Actualiza el atributo lang de la etiqueta html
+        artistName.textContent = content[language].artistName;
+        contactMessage.textContent = content[language].contactMessage; // NEW: Update contact message text
+        document.documentElement.lang = language;
     }
 
     // Event Listeners para los botones de idioma
@@ -49,14 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cargar el idioma por defecto al cargar la página (ej. español)
     updateContent('es');
 
-    // Opcional: Lógica para los botones de contratación (ej. abrir un formulario, una nueva página, etc.)
-    hireMusicianBtn.addEventListener('click', () => {
-        alert('Botón "Contratar como Músico" clickeado. Aquí puedes redirigir a un formulario de contacto o página de servicios musicales.');
-        // window.location.href = 'hire-musician.html'; // Ejemplo de redirección
-    });
-
-    hireTeacherBtn.addEventListener('click', () => {
-        alert('Botón "Contratar como Profesor" clickeado. Aquí puedes redirigir a una página de información de clases o formulario de inscripción.');
-        // window.location.href = 'hire-teacher.html'; // Ejemplo de redirección
-    });
+    // REMOVED: Lógica para los botones de contratación (hireMusicianBtn, hireTeacherBtn)
 });
