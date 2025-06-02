@@ -53,13 +53,14 @@ header h1 {
 }
 
 .language-switcher button {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid #ccc;
     padding: 8px 12px;
     margin-left: 10px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 0.9em;
+    font-weight: bold;
 }
 
 .language-switcher button:hover {
@@ -137,6 +138,7 @@ header h1 {
     .language-switcher button {
         padding: 6px 10px;
         font-size: 0.8em;
+        font-weight: bold;
     }
 
     .profile-pic {
